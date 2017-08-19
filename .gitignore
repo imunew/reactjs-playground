@@ -1,0 +1,11 @@
+# Mac
+.DS_Store
+
+# Jet Brains
+/.idea
+*.iml
+
+# Node.js
+/**/node_modules
+npm-debug.log
+

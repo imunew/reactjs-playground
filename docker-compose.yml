@@ -1,0 +1,14 @@
+version: '2'
+services:
+  nginx:
+    build:
+      context: ./docker/nginx
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html/app
+  node:
+    build:
+      context: ./docker/node
+    volumes:
+      - .:/home/node/app
