@@ -8,7 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 import TextField from 'material-ui/TextField';
 
-export default class Page1 extends React.Component {
+export default class Page extends React.Component {
 
     constructor() {
         super();

@@ -30,6 +30,15 @@ class TodoStore extends EventEmitter {
         this.emit("change"); // イベントを発生
     }
 
+    deleteTodo(id) {
+        const self = this;
+        self.todos.some(function(v, i) {
+            if (v.id === id) self.todos.splice(i, 1);
+        });
+
+        this.emit("change"); // イベントを発生
+    }
+
     // Todoリストを返します。
     getAll() {
         return this.todos;
@@ -41,6 +50,11 @@ class TodoStore extends EventEmitter {
         switch (action.type) { // 追加のアクション`CREATE_TODO`か？
             case "CREATE_TODO": { // 自分で勝手に決めた定数
                 this.addTodo(action.text); // アクションを追加する。で、イベント発生。
+                break;
+            }
+            case "DELETE_TODO": {
+                this.deleteTodo(action.id);
+                break;
             }
         }
     }
